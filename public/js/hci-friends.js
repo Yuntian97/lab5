@@ -8,6 +8,8 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
+$(".friends a").click(setAnagram);
+ 
 function initializePage() {
 	console.log("Javascript connected!");
 }
@@ -43,4 +45,11 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+function setAnagram(e){
+    e.preventDefault();
+    var word = $(this).text();
+    var modiWord = anagrammedName(word);
+    $(this).text(modiWord);
 }
